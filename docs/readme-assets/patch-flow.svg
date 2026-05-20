@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-labelledby="title desc">
-  <title id="title">Windows silky patch flow</title>
-  <desc id="desc">A workflow diagram showing audit, manifest, encoding gate, release preflight, and reusable AgentWorkOS assets.</desc>
+  <title id="title">Windows silky token saver flow</title>
+  <desc id="desc">A workflow diagram showing audit, manifest, encoding gate, release preflight, and reusable AgentWorkOS assets as a token-saving trust loop.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1100" y2="540" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#f8fafc"/>
@@ -24,7 +24,7 @@
       <circle cx="80" cy="46" r="25" fill="#ccfbf1"/>
       <text x="80" y="54" fill="#0f766e" font-size="24" font-weight="700" text-anchor="middle">1</text>
       <text x="80" y="104" fill="#0f172a" font-size="25" font-weight="700" text-anchor="middle">Audit</text>
-      <text x="80" y="135" fill="#334155" font-size="15" text-anchor="middle">report first</text>
+      <text x="80" y="135" fill="#334155" font-size="15" text-anchor="middle">small context</text>
     </g>
     <g transform="translate(270 198)">
       <rect width="160" height="170" rx="22" fill="#ffffff" stroke="#0f766e" stroke-width="5"/>
@@ -52,12 +52,12 @@
       <circle cx="80" cy="46" r="25" fill="#fce7f3"/>
       <text x="80" y="54" fill="#be185d" font-size="24" font-weight="700" text-anchor="middle">5</text>
       <text x="80" y="104" fill="#0f172a" font-size="25" font-weight="700" text-anchor="middle">Assets</text>
-      <text x="80" y="135" fill="#334155" font-size="15" text-anchor="middle">skill / rule / SOP</text>
+      <text x="80" y="135" fill="#334155" font-size="15" text-anchor="middle">reuse proof</text>
     </g>
   </g>
   <g fill="#334155" font-family="Segoe UI, Arial, sans-serif">
-    <text x="86" y="118" font-size="30" font-weight="700">Windows workbench trust loop</text>
-    <text x="86" y="158" font-size="19">Turn clutter into evidence, evidence into gates, and repeated gates into reusable patches.</text>
-    <text x="86" y="424" font-size="18">No destructive default actions. No mystery artifacts. No release without proof.</text>
+    <text x="86" y="118" font-size="30" font-weight="700">Windows workbench token-saver loop</text>
+    <text x="86" y="158" font-size="19">Turn clutter into evidence, evidence into gates, and repeated context into reusable patches.</text>
+    <text x="86" y="424" font-size="18">Less rediscovery. No mystery artifacts. No release without proof.</text>
   </g>
 </svg>

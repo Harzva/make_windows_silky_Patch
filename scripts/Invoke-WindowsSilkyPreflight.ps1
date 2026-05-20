@@ -53,13 +53,37 @@ $artifactExtensions = @(".exe", ".msi", ".msix", ".appx", ".zip", ".7z", ".apk",
 $excludePattern = "\\(\.git|node_modules|__pycache__|\.venv|venv)\\"
 $artifacts = @(Get-ChildItem -LiteralPath $rootFull -Recurse -File -Force -ErrorAction SilentlyContinue |
     Where-Object { $artifactExtensions -contains $_.Extension.ToLowerInvariant() -and $_.FullName -notmatch $excludePattern })
+$manifestValidator = Join-Path $PSScriptRoot "Test-ArtifactEvidenceManifest.ps1"
 
 foreach ($artifact in $artifacts) {
     $manifestByName = Join-Path $artifact.DirectoryName ($artifact.BaseName + ".evidence.json")
-    $manifestNearby = @(Get-ChildItem -LiteralPath $artifact.DirectoryName -File -Force -ErrorAction SilentlyContinue |
-        Where-Object { $_.Name -match "(?i)(manifest|evidence|checksum|sha256)" }).Count -gt 0
-    if (-not (Test-Path -LiteralPath $manifestByName) -and -not $manifestNearby) {
+    $nearbyEvidence = @(Get-ChildItem -LiteralPath $artifact.DirectoryName -File -Force -ErrorAction SilentlyContinue |
+        Where-Object { $_.Name -match "(?i)(manifest|evidence|checksum|sha256)" })
+    if (-not (Test-Path -LiteralPath $manifestByName) -and $nearbyEvidence.Count -eq 0) {
         Add-Failure "Artifact lacks evidence manifest: $($artifact.FullName)"
+    }
+
+    $jsonEvidence = @()
+    if (Test-Path -LiteralPath $manifestByName) {
+        $jsonEvidence = @(Get-Item -LiteralPath $manifestByName)
+    }
+    else {
+        $jsonEvidence = @($nearbyEvidence |
+            Where-Object { $_.Extension.ToLowerInvariant() -eq ".json" -and $_.Name -match "(?i)(manifest|evidence)" })
+    }
+
+    if ($jsonEvidence.Count -gt 0) {
+        if (-not (Test-Path -LiteralPath $manifestValidator)) {
+            Add-Failure "Missing Test-ArtifactEvidenceManifest.ps1 beside preflight script."
+        }
+        else {
+            foreach ($manifest in $jsonEvidence) {
+                & $manifestValidator -Manifest $manifest.FullName
+                if ($LASTEXITCODE -ne 0) {
+                    Add-Failure "Evidence manifest validation failed: $($manifest.FullName)"
+                }
+            }
+        }
     }
 }
 

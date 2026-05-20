@@ -14,6 +14,8 @@ The rule of thumb:
 
 | Term | Expanded meaning | Required behavior |
 | --- | --- | --- |
+| make_windows_silky | Save tokens by turning messy Windows workspace state into reusable evidence and gates | Prefer audit reports, manifests, preflight checks, and reusable assets over repeated raw folder rediscovery |
+| token saver | A positioning rule for reducing repeated model context cost | When the same explanation would be needed again, create or update a durable artifact that future agents can read |
 | 三端同步 | Keep the installed local skill/runtime copy, the local source repository, and the remote GitHub repository synchronized | Update the runtime copy, update and commit the local repo, push to remote, then verify all three states |
 | README 可视化门禁 | Visual assets in README must be checked for clipping, overlap, unreadable text, unsafe scaling, and mobile/desktop readability | Do not ship SVG diagrams or README proof images until text and shapes are visually safe at README display width |
 | 证据清单 | A release artifact manifest with path, bytes, SHA256, source, smoke/install result, screenshot/preview, release target, and decision | Generate or update evidence before treating an artifact as shippable |

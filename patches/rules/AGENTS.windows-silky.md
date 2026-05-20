@@ -2,6 +2,10 @@
 
 Use these rules in projects that produce Windows desktop packages, ZIPs, previews, release notes, or repeated local workflow reviews.
 
+## Token Saver Rule
+
+`make_windows_silky` means save your tokens. If future agents would need to reread the same messy folder state, preserve the answer as a report, manifest, checklist, SOP, Skill, or gate.
+
 ## Report Before Cleanup
 
 Do not delete, move, or rewrite release artifacts during the first pass. Run an inventory and show what will change.

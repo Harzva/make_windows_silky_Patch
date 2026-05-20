@@ -1,0 +1,29 @@
+name: Windows Silky Preflight
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    name: Smoke and repository gates
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Smoke tests
+        shell: powershell
+        run: powershell -ExecutionPolicy Bypass -File .\tests\Run-SmokeTests.ps1
+
+      - name: Repository preflight
+        shell: powershell
+        run: powershell -ExecutionPolicy Bypass -File .\scripts\Invoke-WindowsSilkyPreflight.ps1 -ProjectRoot .
+
+      - name: Diff hygiene
+        shell: bash
+        run: git diff --check

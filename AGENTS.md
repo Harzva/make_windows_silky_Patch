@@ -4,6 +4,8 @@
 
 This repository turns Windows workbench friction into reusable patches: scripts, checklists, rules, skills, agents, prompts, and SOPs.
 
+Core positioning: `make_windows_silky` means save your tokens. Do not make future agents reread the same messy workspace when a report, manifest, checklist, gate, or Skill can preserve the answer.
+
 ## Safety Boundaries
 
 - Never delete, move, quarantine, or rewrite user files by default. Produce reports first.

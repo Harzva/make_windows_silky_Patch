@@ -1,5 +1,11 @@
 # Windows Silky Principles
 
+## 0. Save Tokens By Saving Evidence
+
+The purpose of "make Windows silky" is not cosmetic tidiness. It is to stop people and agents from spending context on the same rediscovery loop.
+
+When a folder scan, release decision, encoding finding, or workflow rule is likely to be needed again, write it into a small durable artifact: report, manifest, checklist, SOP, Skill, or gate.
+
 ## 1. Report Before Cleanup
 
 Windows workspace cleanup should start with a report. Deleting files too early creates a second problem: loss of provenance. The first patch is always visibility.

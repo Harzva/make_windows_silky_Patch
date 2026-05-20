@@ -1,11 +1,11 @@
 ---
 name: make-windows-silky
-description: Evidence-first Windows workbench smoothness workflow. Use when the user asks to make a Windows workspace, local AI/product folder, release workspace, or desktop packaging loop smoother by reducing duplicate artifacts, missing release proof, encoding failures, and project re-entry cost.
+description: Evidence-first Windows workbench smoothness and token-saver workflow. Use when the user asks to make a Windows workspace, local AI/product folder, release workspace, or desktop packaging loop smoother by reducing duplicate artifacts, missing release proof, encoding failures, repeated context loading, and project re-entry cost.
 ---
 
 # Make Windows Silky
 
-This skill improves Windows workbench smoothness through evidence, gates, and reusable assets.
+This skill improves Windows workbench smoothness through evidence, gates, and reusable assets. Its product promise is simple: make Windows silky = save your tokens.
 
 It does not tune the registry, power plan, Defender, or shell extensions by default. Those are separate high-risk system patches that require explicit user intent and rollback steps.
 
@@ -19,6 +19,7 @@ Use this skill when the request mentions:
 - duplicated versioned builds;
 - README/release proof/checksum gaps;
 - Chinese mojibake or encoding cleanup before publishing;
+- saving model context or avoiding repeated project rediscovery;
 - turning repeated local workflow experience into Skill, Agent, Rule, SOP, Prompt, or script.
 
 ## Workflow
@@ -26,6 +27,7 @@ Use this skill when the request mentions:
 1. Inventory first.
    - Run or emulate `scripts/Invoke-WindowsSilkyAudit.ps1`.
    - Identify duplicate artifacts, loose release files, encoding risks, WebView2 residue, large projects without entrypoints.
+   - Prefer a compact report over feeding raw folder sprawl back into the model.
 
 2. Keep the work non-destructive.
    - Do not delete or move files unless explicitly requested.
@@ -45,6 +47,7 @@ Use this skill when the request mentions:
 
 5. Review.
    - Claims must point to artifacts, commands, gates, or next actions.
+   - Token-saver claims must point to a durable artifact that future agents can read.
    - Delegated output must return to current Codex for final acceptance.
 
 ## Output Contract
