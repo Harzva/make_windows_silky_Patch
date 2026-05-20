@@ -9,6 +9,8 @@
     ·
     <a href="./docs/windows-patch-10-factors.md">10 Factors</a>
     ·
+    <a href="./docs/terminology-map.md">Terms</a>
+    ·
     <a href="./docs/upgrade-roadmap.md">Roadmap</a>
     ·
     <a href="./docs/evidence-map.md">Evidence Map</a>
@@ -128,6 +130,12 @@ make_windows_silky_Patch/
 | P2 | WebView2 classifier | 自动判断 `.WebView2` 残留是否属于当前发布 |
 | P2 | README proof generator integration | 截图/缩略图和 README 证明进入发布流程 |
 | P2 | Local dashboard | 横跨多个项目查看 artifact trust state |
+
+## 术语映射
+
+有些短语背后不是一句话，而是一整套工程动作。比如 `三端同步` 在这里表示：本地已安装 skill、本地源仓库、远程 GitHub 仓库三处都要更新并验证。
+
+仓库内的术语解释见 [`docs/terminology-map.md`](./docs/terminology-map.md)。高频术语适合先放进术语映射；如果它会强制改变 Agent 行为，再写进 `AGENTS.md`；如果它变成多步骤流程，再升级成 Skill。
 
 ## 不做什么
 

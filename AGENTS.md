@@ -17,6 +17,10 @@ Use the canonical workflow name `workflow-assetization` when converting Worklog,
 
 If a workflow appears twice, create a rule or checklist. If it appears three or more times and needs judgment, create a Skill candidate. If it blocks release, packaging, publishing, or repo clarity, create a script, SOP, or gate before more feature work.
 
+## Terminology Map Rule
+
+When the user uses a compact shorthand such as `三端同步`, expand it before acting. Use `docs/terminology-map.md` for project terms and `C:\Users\harzva\.codex\agents\TERMS.md` for local cross-project terms when available.
+
 ## Windows Silky Gate
 
 Before calling a Windows workspace or repo "smooth":
